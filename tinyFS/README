@@ -1,0 +1,19 @@
+Name: Sal Espinoza, Zachary Berson
+
+Testing indicates the file system and all of the functions are working.
+
+Additional Features:
+   -Upon mount, the TinyFS is checked for integrity.
+      The superblock, root inode block, and all magic numbers are checked
+      Returns CORRUPT_FS if any block is in incorrect format
+   -Files are given timestamps (created, modified, and accessed)
+      This can be printed using tfs_readFileInfo()
+   -Calling tfs_readdir() will print the root node and all files within it
+
+Limitations:
+   -Max number of files one can create (244)
+   -Max number of disks, and the number of blocks (256)
+      -Subsequently, max disk size of 65536 bytes
+   -File names also have a limit of 8 characters, any additional
+     characters will be truncated.
+   -Max number of free blocks (254)
